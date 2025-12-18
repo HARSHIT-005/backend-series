@@ -10,7 +10,9 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(express.static("public"));
 
-app.get('/',(req,res)=>{
-    res.send("hello world");
-})
+//routes
+
+import userRoutes from "./routes/user.routes.js";
+
+app.use("/api/v1/users",userRoutes);
 export default app;
